@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+main{
+    width: 85%;
+    margin: auto;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('./assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+
+@theme {
+  --font-sans: "NotoSans", sans-serif;
+}
