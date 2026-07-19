@@ -25,7 +25,7 @@ const RateCard = () => {
                     title="star"
                     className="bg-gray-700 w-10 h-10 flex items-center justify-center mb-6 rounded-full"
                 >
-                    <img src="./public/icon-star.svg" alt="Star" />
+                    <img src="/icon-star.svg" alt="Star" />
                 </div>
                 <div>
                     <h3 className="text-white font-bold">How did we do?</h3>
