@@ -28,7 +28,7 @@ const FormInputs = ({
     yearNumber,
     setYearNumber,
 }: FormInputs) => {
-    
+
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = (e: { preventDefault: () => void }) => {
@@ -94,7 +94,7 @@ const FormInputs = ({
                                         setCardHolderName(e.target.value)
                                     }
                                     value={cardHolderName}
-                                    className="border border-gray-300 rounded-md p-2 text-sm"
+                                    className="border border-gray-300 rounded-md p-2 text-sm focus:outline-1 outline-purple-900"
                                     type="text"
                                     placeholder="e.g. Jane Appleseed"
                                 />
@@ -112,7 +112,7 @@ const FormInputs = ({
                                         setCardNumber(formatted);
                                     }}
                                     value={cardNumber}
-                                    className="border border-gray-300 rounded-md p-2 text-sm"
+                                    className="border border-gray-300 rounded-md p-2 text-sm focus:outline-1 outline-purple-900"
                                     type="text"
                                     placeholder="e.g. 1234 5678 9123 0000"
                                 />
@@ -145,7 +145,7 @@ const FormInputs = ({
                                             value={monthNumber ?? ""}
                                             min={1}
                                             max={12}
-                                            className="w-16 border border-gray-300 rounded-md p-2 text-sm"
+                                            className="w-16 border border-gray-300 rounded-md p-2 text-sm focus:outline-1 outline-purple-900"
                                             type="number"
                                             placeholder="MM"
                                         />
@@ -159,7 +159,7 @@ const FormInputs = ({
                                             
                                         }}
                                             value={yearNumber}
-                                            className="ml-2 w-16 border border-gray-300 rounded-md p-2 text-sm"
+                                            className="ml-2 w-16 border border-gray-300 rounded-md p-2 text-sm focus:outline-1 outline-purple-900"
                                             type="number"
                                             placeholder="YY"
                                         />
@@ -178,7 +178,7 @@ const FormInputs = ({
                                             setCvcNumber(formattedCvc);
                                         }}
                                         value={cvcNumber}
-                                        className="border border-gray-300 rounded-md p-2 text-sm"
+                                        className="border border-gray-300 rounded-md p-2 text-sm focus:outline-1 outline-purple-900"
                                         type="text"
                                         placeholder="e.g. 123"
                                     />
@@ -187,7 +187,7 @@ const FormInputs = ({
                             {/* Confirm button */}
                             <button
                                 onClick={(e)=>handleSubmit(e)}
-                                className="bg-purple-950 hover:bg-purple-900 cursor-pointer w-full text-white py-3 rounded-md shadow-xl"
+                                className="bg-purple-950 hover:bg-purple-900 cursor-pointer w-full text-white py-3 rounded-md shadow-xl focus:outline-2 outline-purple-400"
                             >
                                 Confirm
                             </button>
