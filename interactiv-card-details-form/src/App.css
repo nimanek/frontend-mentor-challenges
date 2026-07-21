@@ -9,6 +9,6 @@ body{
 
 @media screen and (width <= 375px) {
     body{
-        background-image: url('./bg-main-mobile.png');
+        background-image: url('./assets/bg-main-mobile.png');
     }
 }
