@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 
-
 body{
     background-image: url('./bg-main-desktop.png');
     background-repeat: no-repeat;
+    font-family: 'Space Grotesk';
+    font-weight: 700px;
 }
 
 @media screen and (width <= 375px) {

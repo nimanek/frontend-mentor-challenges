@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import CardsDetails from './components/CardsDetails'
 import FormInputs from './components/FormInputs'
+import Footer from './components/Footer';
 
 function App() {
     const [cardNumber, setCardNumber] = useState<string>("");
@@ -18,6 +19,8 @@ function App() {
         <CardsDetails cardHolderName={cardHolderName} cardNumber={cardNumber} cvcNumber={cvcNumber} monthNumber={monthNumber} yearNumber={yearNumber}/>
 
         <FormInputs cardNumber={cardNumber} setCardNumber={setCardNumber} setCardHolderName={setCardHolderName} cardHolderName={cardHolderName} setCvcNumber={setCvcNumber} cvcNumber={cvcNumber} monthNumber={monthNumber} setMonthNumber={setMonthNumber} yearNumber={yearNumber} setYearNumber={setYearNumber}/>
+
+        <Footer />
       </div>
     </>
   )

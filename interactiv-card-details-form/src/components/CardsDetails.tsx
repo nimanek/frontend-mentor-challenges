@@ -15,9 +15,9 @@ const CardsDetails = ({cardNumber, cardHolderName,cvcNumber, monthNumber, yearNu
                 <div className="absolute rounded-full top-32 z-50 md:left-58 shadow-xl/50 text-white">
                     <img className="h-40 z-50 md:h-48" src="./bg-card-front.png" />
                     <img className="absolute top-4 left-5 z-60" src="./card-logo.svg" />
-                    <span className="absolute bottom-14 left-5 w-[90%] tracking-[0.4rem] font-medium text-lg">{!cardNumber ? <>0000 0000 0000 0000</> : cardNumber}</span>
-                    <span className="absolute right-5 bottom-4 text-xs">{!monthNumber ? <>00</> : monthNumber}/{!yearNumber ? <>00</> : yearNumber}</span>
-                    <span className="absolute left-5 bottom-4 text-xs">{!cardHolderName ? <>JANE APPLESEED</> : cardHolderName}</span>
+                    <span className="absolute bottom-14 left-5 w-[90%] tracking-[0.35rem] font-medium text-sm md:text-lg">{!cardNumber ? <>0000 0000 0000 0000</> : cardNumber}</span>
+                    <span className="absolute right-5 bottom-4 text-xs tracking-widest">{!monthNumber ? <>00</> : monthNumber}/{!yearNumber ? <>00</> : yearNumber}</span>
+                    <span className="absolute left-5 bottom-4 text-xs tracking-widest">{!cardHolderName ? <>JANE APPLESEED</> : cardHolderName}</span>
                 </div>
                 {/* Back card */}
                 <div className="absolute rounded-full top-10 right-10 w-fit md:left-78 md:top-86 shadow-xl/30">

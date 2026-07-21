@@ -28,6 +28,7 @@ const FormInputs = ({
     yearNumber,
     setYearNumber,
 }: FormInputs) => {
+    
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = (e: { preventDefault: () => void }) => {
@@ -48,6 +49,10 @@ const FormInputs = ({
             alert("Please Check the Expiration Dates");
             return;
         }
+        if(yearNumber < 27){
+            alert(`Year cannot be ${yearNumber}. must be more than 26`);
+            return;
+        }
         setIsSubmitted(true);
         // can take values here and save them
         // ...
@@ -62,24 +67,25 @@ const FormInputs = ({
 
     return (
         <>
-            <div className="relative top-46">
+            <div className="relative top-80 md:top-46">
                 {isSubmitted 
                 ?   (
-                    <div className="absolute right-[20%]">
+                    // THANK YOU PAGE
+                    <div className="absolute left-1 md:left-[55%]">
                         <div className="flex flex-col items-center justify-around w-94 h-76">
                             <img src="./icon-complete.svg" alt="Done" title="Done!" />
                             <div className="flex flex-col items-center gap-2">
                                 <p className="text-2xl font-semibold tracking-wide">THANK YOU!</p>
                                 <p className="font-extralight text-gray-500 tracking-widest">We've added your card details</p>
                             </div>
-                            <button onClick={()=>window.location.reload()} className="w-full bg-purple-950 rounded-md p-3 text-white cursor-pointer hover:bg-purple-900">Continue</button>
+                            <button onClick={()=>window.location.reload()} className="w-[80%] md:w-full bg-purple-950 rounded-md p-3 text-white cursor-pointer hover:bg-purple-900">Continue</button>
                         </div>
                     </div>
                     ) : (
-                    <div className="absolute right-[20%]">
+                    <div className="absolute md:w-81 w-70 right-[20%] left-6 md:left-180">
                         <form action="">
                             {/* CardHolder name */}
-                            <label className="flex flex-col w-81 mb-6">
+                            <label className="flex flex-col w-70 md:w-81 mb-6 tracking-widest">
                                 <span className="font-extralight text-xs mb-1 ">
                                     CARDHOLDER NAME
                                 </span>
@@ -94,7 +100,7 @@ const FormInputs = ({
                                 />
                             </label>
                             {/* Card Number */}
-                            <label className="flex flex-col w-81 mb-6">
+                            <label className="flex flex-col w-70 md:w-81 mb-6 tracking-widest">
                                 <span className="font-extralight text-xs mb-1">
                                     CARD NUMBER
                                 </span>
@@ -112,9 +118,9 @@ const FormInputs = ({
                                 />
                             </label>
                             {/* EXP. date (MM/YY) */}
-                            <div className="flex justify-start items-center">
+                            <div className="flex justify-start items-center w-81">
                                 <label className="flex flex-col mb-6">
-                                    <span className="font-extralight text-xs mb-1 ">
+                                    <span className="text-xs mb-1 tracking-widest">
                                         EXP. DATE (MM/YY)
                                     </span>
                                     <div>
@@ -144,13 +150,14 @@ const FormInputs = ({
                                             placeholder="MM"
                                         />
                                         <input
-                                            min={26}
+                                            min={27}
                                             max={99}
                                             onChange={(e) => {
-                                                setYearNumber(
-                                                    Number(e.target.value),
-                                                );
-                                            }}
+                                            const digitsOnly = e.target.value.replace(/\D/g, "");
+                                            const limitedDigits = digitsOnly.slice(0, 2);
+                                            setYearNumber(parseInt(limitedDigits, 10));
+                                            
+                                        }}
                                             value={yearNumber}
                                             className="ml-2 w-16 border border-gray-300 rounded-md p-2 text-sm"
                                             type="number"
@@ -159,7 +166,7 @@ const FormInputs = ({
                                     </div>
                                 </label>
                                 {/* CVC */}
-                                <label className="flex flex-col w-41 ml-6 mb-6">
+                                <label className="flex flex-col w-30 md:w-41 ml-6 mb-6 tracking-widest">
                                     <span className="font-extralight text-xs mb-1">
                                         CVC
                                     </span>
