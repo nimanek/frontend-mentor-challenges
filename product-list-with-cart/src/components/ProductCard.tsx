@@ -11,7 +11,7 @@ const ProductCard = ({dessert}:ProductCardType) => {
             <div className="">
                 <div className="relative w-fit h-65">
                     <img className="h-fit w-full rounded-md" src={dessert.image.desktop}/>
-                    <AddToCartBtn />
+                    <AddToCartBtn dessert={dessert} />
                 </div>
                 
                 <div className="flex flex-col mt-2 p-1">
