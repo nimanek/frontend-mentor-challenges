@@ -1,18 +1,23 @@
+import type { IData } from "../context/useShoppingCart";
 import AddToCartBtn from "./AddToCartBtn";
 
-const ProductCard = () => {
+type ProductCardType={
+    dessert: IData
+}
+
+const ProductCard = ({dessert}:ProductCardType) => {
     return (
         <>
             <div className="">
                 <div className="relative w-fit h-65">
-                    <img className="h-fit w-full rounded-xl" src="../../public/image-macaron-desktop.jpg"/>
+                    <img className="h-fit w-full rounded-md" src={dessert.image.desktop}/>
                     <AddToCartBtn />
                 </div>
                 
                 <div className="flex flex-col mt-2 p-1">
-                    <p className="text-sm text-gray-500">waffle</p>
-                    <p>waffle with berries</p>
-                    <span className="text-red-600 font-semibold">$6.50</span>
+                    <p className="text-sm text-gray-500">{dessert.category}</p>
+                    <p>{dessert.name}</p>
+                    <span className="text-red-600 font-semibold">${dessert.price}</span>
                 </div>
             </div>
         </>
