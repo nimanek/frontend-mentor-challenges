@@ -6,7 +6,7 @@ function App() {
     return (
         <>
             <div className="mx-auto w-295 mt-12 grid grid-cols-10 gap-6">
-                <div className="col-span-7 bg-red-500">
+                <div className="col-span-7">
                     <ProductsList />
                 </div>
 
