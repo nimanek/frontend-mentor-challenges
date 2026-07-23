@@ -49,7 +49,7 @@ const OrderConfirmedModal = ({ desserts }: any) => {
                     </p>
                 </div>
 
-                <div className="bg-orange-100 w-full p-4 rounded-sm h-80 overflow-x-hidden overflow-auto scrollbar-thin scrollbar-thumb-orange-200">
+                <div className="bg-orange-50 w-full p-4 rounded-sm h-80 overflow-x-hidden overflow-auto scrollbar-thin scrollbar-thumb-orange-200">
                     {cart.map((cartItem: any) => {
                         const product = desserts.find(
                             (d:any) => d.name === cartItem.item,

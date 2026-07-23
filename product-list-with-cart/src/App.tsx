@@ -4,6 +4,7 @@ import ProductsList from "./components/ProductsList";
 import RightCart from "./components/RightCart";
 import { ShoppingCartContext } from "./context/useShoppingCart";
 import OrderConfirmedModal from "./components/OrderConfirmedModal";
+import Footer from "./components/Footer";
 
 function App() {
       const { desserts,orderModal } = useContext(ShoppingCartContext);
@@ -20,6 +21,9 @@ function App() {
                 </div>
 
                     {orderModal && <OrderConfirmedModal desserts={desserts}/>}
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
     );

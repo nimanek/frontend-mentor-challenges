@@ -1,8 +1,31 @@
 @import "tailwindcss";
 
+/* Regular font */
+@font-face {
+  font-family: 'RedHat';
+  src: url('./assets/fonts/static/RedHatText-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Bold font */
+@font-face {
+  font-family: 'RedHat';
+  src: url('./assets/fonts/static/RedHatText-Bold.ttf') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+/* Semibold font */
+@font-face {
+  font-family: 'RedHat';
+  src: url('./assets/fonts/static/RedHatText-SemiBold.ttf') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
 html,
 body {
     background: hsl(20, 50%, 98%);
+    font-family: 'RedHat';
     
 }
 
