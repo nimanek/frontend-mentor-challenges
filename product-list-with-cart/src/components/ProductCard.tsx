@@ -28,7 +28,7 @@ const ProductCard = ({ dessert }: ProductCardType) => {
                     <AddToCartBtn dessert={dessert} />
                 </div>
 
-                <div className="flex flex-col mt-2 p-1">
+                <div className="flex flex-col mt-4 p-1">
                     <p className="text-sm text-gray-500">{dessert.category}</p>
                     <p>{dessert.name}</p>
                     <span className="text-red-600 font-semibold">

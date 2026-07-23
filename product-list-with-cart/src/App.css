@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
-body{
+html,
+body {
     background: hsl(20, 50%, 98%);
+    
+}
+
+@media screen and (max-width: 420px) {
+    html,
+    body {
+        /* width: 100%; */
+        /* overflow-x: hidden; */
+    }
 }

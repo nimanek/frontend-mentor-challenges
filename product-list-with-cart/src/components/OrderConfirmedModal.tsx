@@ -29,9 +29,9 @@ const OrderConfirmedModal = ({ desserts }: any) => {
 
 
     return (
-        <div className="bg-black/50 flex justify-center items-center inset-0 z-50 fixed">
+        <div className="bg-black/50 flex justify-center items-center md:inset-0 bottom-0 z-50 fixed">
 
-            <div ref={modalRef} className="bg-white p-6 rounded-md flex flex-col w-120 items-start gap-2">
+            <div ref={modalRef} className="bg-white p-6 rounded-md flex flex-col md:w-120 w-100 items-start gap-2">
                 <div>
                     <img
                         src="./icon-order-confirmed.svg"
