@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# 🍰 Product List with Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive dessert ordering app built with **React**, **TypeScript**, **Context API**, and **Tailwind CSS**. Users can browse products, add items to a shopping cart, adjust quantities, view order totals, and confirm their order with a summary modal.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🖼️ Screenshot
 
-## React Compiler
+![Project Screenshot](./src/assets/product-list-with-cart[screenshot].png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🔗 Live Demo
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://product-list-with-cart-gamma-blue.vercel.app/)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+👉 **[View the Live Demo Here](https://product-list-with-cart-gamma-blue.vercel.app/)**
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 🌟 Features
+
+* **Global Cart State (React Context):** Centralized cart management powering adding, incrementing, decrementing, and removing items without prop drilling.
+* **Dynamic Quantities:** Increase or decrease dessert counts directly from the product card or cart side panel.
+* **Cart Summary:** Calculates line-item totals and global order total in real-time.
+* **Order Confirmation:** Opens a modal summarizing the order when clicking "Confirm Order" and allows resetting for a new order.
+* **Responsive Layout:** Grid view built specifically for mobile, tablet, and desktop viewports.
+
+---
+
+## 🛠️ Built With
+
+* **React** (Vite)
+* **Context API**
+* **TypeScript**
+* **Tailwind CSS**
+* **Google Fonts** (Red Hat Text)
