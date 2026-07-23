@@ -18,7 +18,7 @@ const AddToCartBtn = ({ dessert }: AddToCartBtnType) => {
                     onClick={() => handleAdd(dessert.name)}
                     className="flex items-center justify-center gap-2 border border-gray-500 shadow-md absolute bottom-0 left-12 bg-white px-6 py-2 rounded-full cursor-pointer hover:bg-rose-50"
                 >
-                    <img src="../../public/icon-add-to-cart.svg" /> Add to Cart
+                    <img src="./icon-add-to-cart.svg" /> Add to Cart
                 </button>
             ) : (
                 <div className="flex items-center justify-between gap-2 w-41 border border-gray-500 shadow-md absolute bottom-0 left-12 bg-orange-700 px-6 py-2 rounded-full text-white">
@@ -35,7 +35,7 @@ const AddToCartBtn = ({ dessert }: AddToCartBtnType) => {
                         onClick={() => handleAdd(dessert.name)}
                         className="cursor-pointer border border-white rounded-full px-1 py-1 hover:bg-orange-400"
                     >
-                        <img src="../../public/icon-increment-quantity.svg" />
+                        <img src="./icon-increment-quantity.svg" />
                     </button>
                 </div>
             )}

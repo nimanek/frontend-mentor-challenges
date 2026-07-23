@@ -23,6 +23,7 @@ export const ShoppingCartContext = createContext<any>(null);
 export function ShoppingCartProvider({ children }: { children: ReactNode }) {
     const [desserts, setDesserts] = useState<IData[]>([]);
     const [cart, setCart] = useState<CartItem[]>([]);
+    const [orderModal, setOrderModal] = useState(false)
 
     
 
@@ -33,7 +34,7 @@ export function ShoppingCartProvider({ children }: { children: ReactNode }) {
             if (existing) {
                 // If exists so add 1 more
                 return prevCart.map((c) =>
-                    c.item === name ? { ...c, qty: c.qty + 1 } : c,
+                    c.item === name ? { ...c ,qty: c.qty + 1 } : c,
                 );
             }
             // If didn't exist so add 1
@@ -58,13 +59,18 @@ export function ShoppingCartProvider({ children }: { children: ReactNode }) {
         });
     };
 
+
+    const handleRemove = (item:string)=>{
+        setCart((prev)=>prev.filter((c)=>(c.item !== item)))
+    }
+
     useEffect(() => {
         setDesserts(data);
     }, []);
 
     return (
         <ShoppingCartContext.Provider
-            value={{ desserts, handleAdd, handleDec, cart }}
+            value={{ desserts, handleAdd, handleDec, cart,handleRemove,orderModal, setOrderModal }}
         >
             {children}
         </ShoppingCartContext.Provider>
