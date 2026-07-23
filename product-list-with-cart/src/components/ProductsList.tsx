@@ -8,7 +8,7 @@ const ProductsList = () => {
     return (
         <>
             <p className="font-bold text-3xl mb-6">Desserts</p>
-            <div className="grid gap-6 grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-1">
                 {desserts.map((dessert: IData) => (
                     <ul key={dessert.name}>
                         <li>

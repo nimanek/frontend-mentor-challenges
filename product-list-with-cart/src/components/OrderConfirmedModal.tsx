@@ -1,14 +1,37 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ShoppingCartContext } from "../context/useShoppingCart";
 import { FormatPrice } from "../utils/FormatPrice";
 
 const OrderConfirmedModal = ({ desserts }: any) => {
-    const { cart, setOrderModal } = useContext(ShoppingCartContext);
+    const { cart, setOrderModal,setCart } = useContext(ShoppingCartContext);
 
-    
+    const modalRef = useRef<HTMLDivElement>(null)
+    useEffect(()=>{
+
+        const handleClickOutside = (event: MouseEvent)=>{
+            if(modalRef.current && !modalRef.current.contains(event.target as Node)){
+                setOrderModal(false)
+                setCart([])
+            }
+        }
+
+        window.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+    },[setOrderModal])
+
+    const grandTotal = cart.reduce((total: any, cartItem: any) => {
+        const product = desserts.find((d:any) => d.name === cartItem.item);
+        return total + (product ? product.price * cartItem.qty : 0);
+    }, 0);
+
+
     return (
         <div className="bg-black/50 flex justify-center items-center inset-0 z-50 fixed">
-            <div className="bg-white p-6 rounded-md flex flex-col w-120 items-start gap-2">
+
+            <div ref={modalRef} className="bg-white p-6 rounded-md flex flex-col w-120 items-start gap-2">
                 <div>
                     <img
                         src="../../public/icon-order-confirmed.svg"
@@ -26,12 +49,11 @@ const OrderConfirmedModal = ({ desserts }: any) => {
                     </p>
                 </div>
 
-                <div className="bg-orange-100 w-full p-4 rounded-sm">
+                <div className="bg-orange-100 w-full p-4 rounded-sm h-80 overflow-x-hidden overflow-auto scrollbar-thin scrollbar-thumb-orange-200">
                     {cart.map((cartItem: any) => {
                         const product = desserts.find(
                             (d:any) => d.name === cartItem.item,
                         );
-                        console.log(product.image)
                         if (!product) return null;
                         const unitPrice = product.price;
                         const itemTotal = product.price * cartItem.qty;
@@ -47,7 +69,7 @@ const OrderConfirmedModal = ({ desserts }: any) => {
                                             </h5>
 
                                             <div className="flex items-center justify-start">
-                                                <span className="mr-2 text-red-700">
+                                                <span className="mr-2 text-red-700 text-sm">
                                                     {cartItem.qty}x
                                                 </span>
 
@@ -70,13 +92,13 @@ const OrderConfirmedModal = ({ desserts }: any) => {
                         );
                     })}
                     <div className="flex justify-between w-full items-center mt-6">
-                        <p>Order Total</p>
-                        <p>$49.00</p>
+                        <p className="text-neutral-600">Order Total</p>
+                        <p className="font-bold">${FormatPrice(grandTotal)}</p>
                     </div>
                 </div>
 
                 <button
-                    onClick={() => setOrderModal(false)}
+                    onClick={() => {setOrderModal(false);setCart([])}}
                     className="bg-orange-700 text-white w-full py-2 rounded-full cursor-pointer hover:bg-orange-800"
                 >
                     Start New Order
