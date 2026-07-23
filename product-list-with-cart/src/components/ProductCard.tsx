@@ -14,11 +14,17 @@ const ProductCard = ({ dessert }: ProductCardType) => {
     return (
         <>
             <div className="">
-                <div className="relative w-fit h-65">
-                    <img
+                <div className="relative w-fit md:h-65 h-60">
+                    <picture>
+                        <source  media="(min-width: 1024px)" srcSet={dessert.image.desktop} />
+                        <source media="(min-width: 768px)" srcSet={dessert.image.tablet} />
+                        <img
                         className={`h-fit w-full rounded-md ${currentItem?.qty > 0 ? "border-2 border-orange-700" : ""}`}
-                        src={dessert.image.desktop}
+                        src={dessert.image.mobile}
+                        alt={dessert.name}
+                        title={dessert.category}
                     />
+                    </picture>
                     <AddToCartBtn dessert={dessert} />
                 </div>
 

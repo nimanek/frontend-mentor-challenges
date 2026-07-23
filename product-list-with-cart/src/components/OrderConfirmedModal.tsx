@@ -34,7 +34,7 @@ const OrderConfirmedModal = ({ desserts }: any) => {
             <div ref={modalRef} className="bg-white p-6 rounded-md flex flex-col w-120 items-start gap-2">
                 <div>
                     <img
-                        src="../../public/icon-order-confirmed.svg"
+                        src="./icon-order-confirmed.svg"
                         alt="confirmed"
                     />
                 </div>

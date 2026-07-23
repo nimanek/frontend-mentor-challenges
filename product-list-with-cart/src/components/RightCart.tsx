@@ -22,7 +22,7 @@ const RightCart = ({ desserts }: RightCartType) => {
 
 
     return (
-        <>
+        <div className="">
             {cart[0] ? (
                 <div className="bg-white p-4 rounded-md shadow-sm">
                     <h3 className="text-xl font-bold text-red-700">
@@ -82,7 +82,7 @@ const RightCart = ({ desserts }: RightCartType) => {
                     </button>
                 </div>
             ) : (
-                <div className="bg-white p-4 rounded-md shadow-sm">
+                <div className="bg-white p-4 rounded-md shadow-sm ">
                     <h3 className="text-xl font-bold text-red-600">
                         Your Cart (<span>0</span>)
                     </h3>
@@ -92,7 +92,7 @@ const RightCart = ({ desserts }: RightCartType) => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

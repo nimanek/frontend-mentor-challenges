@@ -16,7 +16,7 @@ const AddToCartBtn = ({ dessert }: AddToCartBtnType) => {
             {count === 0 ? (
                 <button
                     onClick={() => handleAdd(dessert.name)}
-                    className="flex items-center justify-center gap-2 border border-gray-500 shadow-md absolute bottom-0 left-12 bg-white px-6 py-2 rounded-full cursor-pointer hover:bg-rose-50"
+                    className="flex items-center justify-center gap-2 border border-gray-500 shadow-md absolute bottom-0 md:left-12 left-20 bg-white px-6 py-2 rounded-full cursor-pointer hover:bg-rose-50"
                 >
                     <img src="./icon-add-to-cart.svg" /> Add to Cart
                 </button>

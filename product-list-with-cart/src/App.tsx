@@ -10,7 +10,7 @@ function App() {
 
     return (
         <div>
-            <div className="mx-auto w-295 mt-12 grid grid-cols-1 md:grid-cols-10 md:gap-6">
+            <div className="mx-auto md:w-295 w-93.75 mt-12 grid grid-cols-1 md:grid-cols-10 md:gap-6">
                 <div className="col-span-7">
                     <ProductsList />
                 </div>
