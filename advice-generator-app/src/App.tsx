@@ -40,51 +40,62 @@ function App() {
     return (
         <>
             <div className="flex items-center justify-center min-h-screen bg-slate-800">
-
                 <div className="sm:w-[28%] w-[90%]">
-                  <main className="real relative flex flex-col bg-slate-700 rounded-md p-6 items-center text-white shadow-md">
-                    <p className="text-green-300 text-[0.6em] font-bold tracking-[0.18rem]">
-                        ADVICE #{isLoading ? <>...</> : advice?.slip.id}
-                    </p>
-                    <p className="font-semibold p-4">
-                        {isLoading ? (
-                            <ThreeDot
-                                variant="bounce"
-                                color={[
-                                    "#196719",
-                                    "#239023",
-                                    "#2db92d",
-                                    "#47d247",
-                                ]}
-                                size="medium"
-                                text=""
-                                textColor=""
+                    <main className="real relative flex flex-col bg-slate-700 rounded-md p-6 items-center text-white shadow-md">
+                        <p className="text-green-300 text-[0.6em] font-bold tracking-[0.18rem]">
+                            ADVICE #{isLoading ? <>...</> : advice?.slip.id}
+                        </p>
+                        <p className="font-semibold p-4">
+                            {isLoading ? (
+                                <ThreeDot
+                                    variant="bounce"
+                                    color={[
+                                        "#196719",
+                                        "#239023",
+                                        "#2db92d",
+                                        "#47d247",
+                                    ]}
+                                    size="medium"
+                                    text=""
+                                    textColor=""
+                                />
+                            ) : (
+                                <q className="font-semibold">
+                                    {advice?.slip.advice}
+                                </q>
+                            )}
+                        </p>
+
+                        <picture>
+                            <source
+                                media="(min-width:400px )"
+                                srcSet="./pattern-divider-mobile.svg"
                             />
-                        ) : (
-                            <q className="font-semibold">{advice?.slip.advice}</q>
-                        )}
-                    </p>
-
-                    <picture>
-                      <source media="(min-width:400px )" srcSet="./pattern-divider-mobile.svg" />
-                      <img
-                        className="my-4"
-                        src="./pattern-divider-desktop.svg"
-                    />
-                    </picture>
-                    <button
-                        onClick={() => fetchAdvice()}
-                        className="absolute -bottom-5 cursor-pointer p-3 bg-green-300 hover:bg-green-400 transition rounded-full outline-0"
-                    >
-                        <img
-                            className="h-4"
-                            src="./icon-dice.svg"
-                            alt="Dice icon"
-                        />
-                    </button>
-                </main>
+                            <img
+                                className="my-4"
+                                src="./pattern-divider-desktop.svg"
+                            />
+                        </picture>
+                        <button
+                            onClick={() => fetchAdvice()}
+                            className="absolute -bottom-5 cursor-pointer p-3 bg-green-300 hover:bg-green-400 transition rounded-full outline-0"
+                        >
+                            <img
+                                className="h-4"
+                                src="./icon-dice.svg"
+                                alt="Dice icon"
+                            />
+                        </button>
+                    </main>
+                {/* footer */}
+                <footer className="absolute bottom-12">
+                    Challenge by{" "}
+                    <a href="https://www.frontendmentor.io?ref=challenge">
+                        Frontend Mentor
+                    </a>
+                    . Coded by <a className="text-green-500" href="https://www.frontendmentor.io/profile/nimanek">Nima Nk</a>.
+                </footer>{" "}
                 </div>
-
             </div>
         </>
     );
