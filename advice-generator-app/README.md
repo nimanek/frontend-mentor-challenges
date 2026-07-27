@@ -1,75 +1,36 @@
-# React + TypeScript + Vite
+# 🎲 Advice Generator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive advice generator app built with **React**, **TypeScript**, **Vite**, and **Axios**. Users can fetch randomized pieces of advice at the click of a button powered by the Advice Slip API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🖼️ Screenshot
 
-## React Compiler
+![Project Screenshot](./src/assets/advice-generator-app[screenshot].png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🔗 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://advice-generator-app-neon-five.vercel.app/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+👉 **[View the Live Demo Here](https://advice-generator-app-neon-five.vercel.app/)**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🌟 Features
 
-```
+* **Real-time API Integration:** Fetches random quotes dynamically from the Advice Slip API using **Axios**.
+* **Smooth Loading States:** Disables button interactions and displays visual feedback while fetching new advice to prevent spam requests.
+* **Responsive Layout:** Pixel-perfect layout tailored for mobile, tablet, and desktop viewports using CSS Grid/Flexbox and media queries.
+* **Type-Safe Development:** Fully typed API responses and component props using **TypeScript**.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Built With
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+* **React** (Vite)
+* **TypeScript**
+* **Axios** (for HTTP API requests)
+* **Tailwind CSS**
+* **Google Fonts** (Manrope)
