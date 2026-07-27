@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 export interface Root {
     slip: {
@@ -13,17 +14,21 @@ function App() {
     const [advice, setAdvice] = useState<Root>();
 
     useEffect(()=>{
-      
+      axios.get<Root>(`https://api.adviceslip.com/advice`).then((res)=>{
+        setAdvice(res.data)
+      })
     },[])
 
+   
+    console.log(advice)
+    
     return (
         <>
             <div className="flex items-center justify-center min-h-screen bg-slate-800">
                 <main className="flex flex-col bg-slate-600 rounded-md p-6 items-center text-white">
-                    <p className="text-green-500 text-sm">ADVICE NUMBER #22</p>
+                    <p className="text-green-500 text-sm">ADVICE NUMBER #{advice?.slip.id}</p>
                     <p className="font-semibold p-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Excepturi.
+                        {!advice ? <>Loading...</> : advice?.slip.advice}
                     </p>
 
                     <img
