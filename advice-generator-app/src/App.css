@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-main{
+*{
+    font-family: 'Manrope';
+}
+
+main .real{
     margin: auto;
     width: 30%;
 }
