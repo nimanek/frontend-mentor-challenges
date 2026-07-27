@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { ThreeDot } from "react-loading-indicators";
 
-export interface Root {
+interface Root {
     slip: {
         id: number;
         advice: string;
