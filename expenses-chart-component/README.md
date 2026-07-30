@@ -1,75 +1,36 @@
-# React + TypeScript + Vite
+# 📊 Expenses Chart Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive expenses chart component built with **React**, **TypeScript**, **Tailwind CSS**, and **Chart.js** (`react-chartjs-2`). Users can view their weekly spending data visualized in an interactive bar chart based on a local JSON data source.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🖼️ Screenshot
 
-## React Compiler
+![Project Screenshot](./src/assets/expenses-chart-component[screenshot].png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🔗 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://expenses-chart-component-six-omega.vercel.app/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+👉 **[View the Live Demo Here](https://expenses-chart-component-six-omega.vercel.app/)**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🌟 Features
 
-```
+* **Dynamic Data Rendering:** Reads weekly expense data from a local JSON file and renders it instantly.
+* **Interactive Bar Chart:** Built with **Chart.js**, featuring custom tooltips that display exact spending amounts on hover.
+* **Auto-Highlight Maximum Spending:** Automatically calculates and highlights the day with the highest expense using a distinct color.
+* **Responsive Layout:** Perfectly fits all screen sizes from mobile to desktop using **Tailwind CSS**.
+* **Type-Safe Codebase:** Fully typed component props and Chart.js options using **TypeScript**.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Built With
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+* **React** (Vite)
+* **TypeScript**
+* **Chart.js** & **react-chartjs-2**
+* **Tailwind CSS**
