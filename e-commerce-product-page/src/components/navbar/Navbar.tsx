@@ -16,6 +16,7 @@ const Navbar = () => {
                         src="./logo.svg"
                         alt="logo"
                     />
+                    
                     {navs.map((nav) => (
                         <ul key={nav.id}>
                             <li className="cursor-pointer text-gray-700 hover:text-black">
