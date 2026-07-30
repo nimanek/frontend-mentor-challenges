@@ -3,4 +3,7 @@
 
 html, body{
   background-color: #F7EADC;
+  padding: 0;
+  margin: auto;
+  width: 95%;
 }
