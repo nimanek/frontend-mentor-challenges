@@ -1,6 +1,12 @@
+import type { Dispatch, SetStateAction } from "react";
 import AddToCart from "./AddToCart";
 
-const ProductDetailsText = () => {
+export type ProductDetailsTextProps={
+    count: number;
+    setCount: Dispatch<SetStateAction<number>>;
+}
+
+const ProductDetailsText = ({count, setCount}:ProductDetailsTextProps) => {
     return (
         <>
             <div className="flex flex-col gap-2 w-120 mt-12">
@@ -16,7 +22,7 @@ const ProductDetailsText = () => {
 
 
                 {/* add to cart */}
-               <AddToCart />
+               <AddToCart count={count} setCount={setCount}/>
 
             </div>
         </>

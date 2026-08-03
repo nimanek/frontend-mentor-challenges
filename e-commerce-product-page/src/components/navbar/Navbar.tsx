@@ -1,6 +1,15 @@
+import type { Dispatch, SetStateAction } from "react";
 import Cart from "./Cart";
 
-const Navbar = () => {
+ export type NavbarProps={
+    isCartOpen: boolean;
+    setIsCartOpen: Dispatch<SetStateAction<boolean>>;
+    count: number;
+    setCount: Dispatch<SetStateAction<number>>;
+}
+
+
+const Navbar = ({isCartOpen,setIsCartOpen, count, setCount}:NavbarProps) => {
     const navs = [
         { id: 1, name: "Collections" },
         { id: 2, name: "Men" },
@@ -29,7 +38,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center justify-center gap-8">
-                    <Cart />
+                    <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} count={count} setCount={setCount}/>
                     <img
                         className="h-10"
                         src="./image-avatar.png"
