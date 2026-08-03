@@ -1,6 +1,6 @@
 import type { ProductDetailsTextProps } from "./ProductDetailsText";
 
-const AddToCart = ({count, setCount}:ProductDetailsTextProps) => {
+const AddToCart = ({count, setCount,setIsCartOpen}:ProductDetailsTextProps) => {
     // const [count, setCount] = useState(0)
 
 
@@ -14,6 +14,7 @@ const AddToCart = ({count, setCount}:ProductDetailsTextProps) => {
 
     const handleAddToCart = ()=>{
         setCount(prev => prev + 1)
+        setIsCartOpen(true)
     }
 
     return (
@@ -29,7 +30,7 @@ const AddToCart = ({count, setCount}:ProductDetailsTextProps) => {
                     </button>
                 </div>
 
-                <button onClick={handleAdd} className="bg-orange-500 flex items-center justify-center py-3 w-full rounded-sm gap-4 hover:bg-orange-300 cursor-pointer">
+                <button onClick={handleAddToCart} className="bg-orange-500 flex items-center justify-center py-3 w-full rounded-sm gap-4 hover:bg-orange-300 cursor-pointer">
                     <img src="./icon-cart.svg" alt="cart" />
                     <p className="font-semibold">Add to cart</p>
                 </button>

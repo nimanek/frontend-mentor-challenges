@@ -4,9 +4,10 @@ import AddToCart from "./AddToCart";
 export type ProductDetailsTextProps={
     count: number;
     setCount: Dispatch<SetStateAction<number>>;
+    setIsCartOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const ProductDetailsText = ({count, setCount}:ProductDetailsTextProps) => {
+const ProductDetailsText = ({count, setCount, setIsCartOpen}:ProductDetailsTextProps) => {
     return (
         <>
             <div className="flex flex-col gap-2 w-120 mt-12">
@@ -22,7 +23,7 @@ const ProductDetailsText = ({count, setCount}:ProductDetailsTextProps) => {
 
 
                 {/* add to cart */}
-               <AddToCart count={count} setCount={setCount}/>
+               <AddToCart setIsCartOpen={setIsCartOpen} count={count} setCount={setCount}/>
 
             </div>
         </>

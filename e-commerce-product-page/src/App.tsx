@@ -5,7 +5,7 @@ import ProductDetailsText from "./components/ProductDetailsText";
 import ProductPics from "./components/ProductPics";
 
 function App() {
-    const [isCartOpen, setIsCartOpen] = useState(true);
+    const [isCartOpen, setIsCartOpen] = useState(false);
     const [count, setCount] = useState(0);
 
     return (
@@ -18,7 +18,7 @@ function App() {
                         <ProductPics />
                     </div>
                     <div className="col-span-6">
-                        <ProductDetailsText count={count} setCount={setCount}/>
+                        <ProductDetailsText setIsCartOpen={setIsCartOpen} count={count} setCount={setCount}/>
                     </div>
                 </main>
             </div>
