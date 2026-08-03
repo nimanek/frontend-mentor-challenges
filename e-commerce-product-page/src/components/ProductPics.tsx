@@ -19,22 +19,29 @@ const ProductPics = () => {
         {
             full: "./image-product-4.jpg",
             thumbnail: "./image-product-4-thumbnail.jpg",
-        },
-        {
-            full: "./image-product-5.jpg",
-            thumbnail: "./image-product-5-thumbnail.jpg",
-        },
+        }
     ];
+
+
+    const handleImg = (ind:number)=>{
+        setSelectedImg(ind)
+    }
 
     return (
         <>
-            <div>
+            <div className="flex flex-col items-center justify-center">
 
               <div>
-                <img className="rounded-2xl " src={images[selectedImg].full} alt="product" />
+                <img className="rounded-2xl" src={images[selectedImg].full} alt="product" />
               </div>
 
-              <div></div>
+              <div className="flex mt-2 gap-4 items-center justify-end">
+                {images.map((img,ind)=>(
+                  <button onClick={()=>handleImg(ind)} className={`cursor-pointer rounded-xl flex items-center justify-end ${selectedImg === ind ? 'border-2 border-orange-500' : ''}`} key={ind}>
+                    <img className={`ml-3 rounded-lg  ${selectedImg === ind ? 'opacity-40' : ''}`} src={img.thumbnail} alt="" />
+                  </button>
+                ))}
+              </div>
 
             </div>
         </>
