@@ -72,11 +72,11 @@ const Navbar = ({
                     <img className="mr-8" src="./logo.svg" alt="logo" />
 
                     {/* menu for desktop screens */}
-                    <ul className="hidden md:flex items-center justify-center gap-4">
+                    <ul className="hidden md:flex items-center justify-center gap-4 mt-10">
                         {navs.map((nav) => (
                             <li
                                 key={nav.id}
-                                className="cursor-pointer text-gray-700 hover:text-black"
+                                className="cursor-pointer text-gray-700 hover:text-black pb-12 hover:border-b-2 border-b-orange-500"
                             >
                                 {nav.name}
                             </li>
