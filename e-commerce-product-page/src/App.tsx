@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import ProductDetailsText from "./components/ProductDetailsText";
 import ProductPics from "./components/ProductPics";
+import Footer from "./components/Footer";
 
 function App() {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -21,6 +22,7 @@ function App() {
                         <ProductDetailsText setIsCartOpen={setIsCartOpen} count={count} setCount={setCount}/>
                     </div>
                 </main>
+                    <Footer />
             </div>
         </>
     );
