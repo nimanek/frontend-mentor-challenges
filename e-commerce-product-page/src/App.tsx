@@ -12,12 +12,12 @@ function App() {
         <>
             <Navbar count={count} setCount={setCount} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
 
-            <div className="mt-16">
-                <main className="grid grid-cols-10 gap-18">
-                    <div className="col-span-4">
+            <div className="md:mt-16">
+                <main className="grid md:grid-cols-10 md:gap-18 grid-cols-1">
+                    <div className="md:col-span-4 col-span-1">
                         <ProductPics />
                     </div>
-                    <div className="col-span-6">
+                    <div className="md:col-span-6 col-span-1">
                         <ProductDetailsText setIsCartOpen={setIsCartOpen} count={count} setCount={setCount}/>
                     </div>
                 </main>

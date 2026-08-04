@@ -1,4 +1,5 @@
 import type { NavbarProps } from "./Navbar";
+import swal from "sweetalert";
 
 const Cart = ({ isCartOpen, setIsCartOpen, count, setCount }: NavbarProps) => {
     // func for making numbers look like price.00
@@ -17,6 +18,13 @@ const Cart = ({ isCartOpen, setIsCartOpen, count, setCount }: NavbarProps) => {
         setCount(0);
     };
 
+    // after clicking checkout do (alert, reset cart number, close cart)
+    const handleCheckout=()=>{
+        swal('Good Luck ;D');
+        setCount(0);
+        setIsCartOpen(false);
+    }
+
     return (
         <div className="relative">
             <button
@@ -24,13 +32,13 @@ const Cart = ({ isCartOpen, setIsCartOpen, count, setCount }: NavbarProps) => {
                 className="cursor-pointer hover:bg-gray-100 p-2 rounded-full"
             >
                 <img src="./icon-cart.svg" alt="cart" />
-                <span className="absolute bg-orange-500 text-white rounded-4xl w-4 h-4 text-xs top-0">
+                <span className={`absolute bg-orange-500 text-white rounded-4xl w-4 h-4 text-xs top-0 ${count === 0 ? 'hidden' : ''}`}>
                     {count}
                 </span>
             </button>
 
             {isCartOpen && (
-                <div className="absolute bg-white shadow-2xl rounded-xl w-90 top-16 -right-35 h-56">
+                <div className="absolute bg-white z-40 shadow-2xl rounded-xl md:w-90 w-72 top-18 -right-18 md:top-16 md:-right-35 h-56">
                     <p className="p-4 text-lg font-semibold">Cart</p>
                     <hr className="text-gray-200" />
                     {count === 0 ? (
@@ -41,14 +49,14 @@ const Cart = ({ isCartOpen, setIsCartOpen, count, setCount }: NavbarProps) => {
                     ) : (
                         <>
                             <div className="flex flex-col gap-4 p-4">
-                                <div className="text-gray-500 flex items-center justify-between">
+                                <div className="text-gray-500 flex items-center justify-between gap-4 md:gap-0">
                                     <img
-                                        className="h-14 rounded-md"
+                                        className="h-12 md:h-14 rounded-md"
                                         src="./image-product-1-thumbnail.jpg"
                                     />
 
                                     <div className="flex flex-col items-start">
-                                        <p>Fall Limited Edition Sneakers</p>
+                                        <p className="text-xs md:text-base">Fall Limited Edition Sneakers</p>
                                         <span className="flex items-center justify-center gap-2">
                                             ${formatPrice(itemPrice)} x {count}{" "}
                                             <span className="font-bold text-black">
@@ -61,10 +69,10 @@ const Cart = ({ isCartOpen, setIsCartOpen, count, setCount }: NavbarProps) => {
                                         className="cursor-pointer"
                                         onClick={handleRemoveItemFromCart}
                                     >
-                                        <img src="./icon-delete.svg" alt="" />
+                                        <img src="./icon-delete.svg" alt="Delete icon" />
                                     </button>
                                 </div>
-                                <button className="bg-orange-500 p-3 rounded-lg font-bold cursor-pointer hover:bg-orange-300">Checkout</button>
+                                <button onClick={handleCheckout} className="bg-orange-500 p-3 rounded-lg font-bold cursor-pointer hover:bg-orange-300">Checkout</button>
                             </div>
                         </>
                     )}
